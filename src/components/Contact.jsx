@@ -1,6 +1,6 @@
 import { useState, useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
-import { Phone, Mail, MapPin, Clock, Send, CheckCircle } from 'lucide-react'
+import { Phone, Mail, MapPin, Clock, Send, CheckCircle, ArrowRight } from 'lucide-react'
 
 const contactInfo = [
   { icon: Phone, label: 'Téléphone', value: '+226 25 41 49 80', href: 'tel:+22625414980' },
@@ -97,14 +97,22 @@ export default function Contact() {
               )
             })}
 
-            {/* Map placeholder */}
-            <div className="flex-1 min-h-40 rounded-xl overflow-hidden bg-white border border-orange-100 shadow-sm flex items-center justify-center text-gray-300 text-sm">
-              <div className="text-center">
-                <MapPin size={32} className="text-gold-400/50 mx-auto mb-2" />
-                <p>Secteur 34, Zagtouli</p>
-                <p>Ouagadougou, Burkina Faso</p>
+            {/* Google Maps button */}
+            <a
+              href="https://maps.app.goo.gl/bXqShGy9XrXMYgBX9"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-4 bg-white border border-orange-100 rounded-xl p-5 group hover:border-gold-400/50 hover:shadow-md transition-all shadow-sm"
+            >
+              <div className="w-10 h-10 rounded-lg bg-orange-50 border border-orange-100 flex items-center justify-center flex-shrink-0 group-hover:bg-orange-100 transition-colors">
+                <MapPin size={18} className="text-gold-500" />
               </div>
-            </div>
+              <div className="flex-1">
+                <p className="text-gray-400 text-xs mb-0.5">Localisation</p>
+                <p className="text-navy-900 font-medium group-hover:text-gold-600 transition-colors">Voir sur Google Maps</p>
+              </div>
+              <ArrowRight size={16} className="text-gold-400 group-hover:translate-x-1 transition-transform" />
+            </a>
           </motion.div>
 
           {/* Form */}
