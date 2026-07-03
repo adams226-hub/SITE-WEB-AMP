@@ -1,6 +1,6 @@
 import { useState, useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
-import { ArrowRight, Tag, Clock } from 'lucide-react'
+import { ArrowRight } from 'lucide-react'
 
 const categories = ['Tous', 'Terrassement', 'Transport', 'Compactage', 'Levage']
 
@@ -11,7 +11,6 @@ const equipment = [
     category: 'Terrassement',
     image: '/images/bulldozer.png',
     desc: 'Puissant et polyvalent, idéal pour le défrichage, le nivellement et le déplacement de grandes masses de terre.',
-    tags: ['Location', 'Vente'],
     models: 'D6, D7, D8, D9',
     available: true,
   },
@@ -21,7 +20,6 @@ const equipment = [
     category: 'Terrassement',
     image: '/images/pont_excavateur.jpg',
     desc: "Excavatrice haute performance pour extraction minière, terrassement et travaux de fondation en terrain difficile.",
-    tags: ['Location', 'Vente'],
     models: '200, 300, 400 tonnes',
     available: true,
   },
@@ -31,7 +29,6 @@ const equipment = [
     category: 'Transport',
     image: '/images/camion.png',
     desc: "Camion benne pour le transport de matériaux en grande capacité sur les chantiers miniers et de construction.",
-    tags: ['Location', 'Vente'],
     models: '30T, 40T, 60T, 100T',
     available: true,
   },
@@ -41,7 +38,6 @@ const equipment = [
     category: 'Compactage',
     image: '/images/compacteur_route.jpg',
     desc: "Compacteur à bille ou à pied de mouton pour le compactage de sol, routes et zones de remblai.",
-    tags: ['Location'],
     models: 'CA, CS, CP Series',
     available: false,
   },
@@ -51,7 +47,6 @@ const equipment = [
     category: 'Terrassement',
     image: '/images/finisseur_autoroute.jpg',
     desc: "Machine de nivellement précis pour la création et l'entretien de routes, pistes minières et zones de stockage.",
-    tags: ['Location', 'Vente'],
     models: '120, 140, 160 AWD',
     available: true,
   },
@@ -61,7 +56,6 @@ const equipment = [
     category: 'Terrassement',
     image: '/images/chargeur.png',
     desc: "Chargeur frontal sur roues pour le chargement, le déplacement et le stockage de matériaux en vrac.",
-    tags: ['Location', 'Vente'],
     models: '950, 966, 972, 980',
     available: true,
   },
@@ -71,7 +65,6 @@ const equipment = [
     category: 'Levage',
     image: '/images/grue.png',
     desc: "Grue automotrice pour levage et manutention de charges lourdes sur les sites miniers et industriels.",
-    tags: ['Location'],
     models: '50T, 100T, 200T',
     available: true,
   },
@@ -81,7 +74,6 @@ const equipment = [
     category: 'Terrassement',
     image: '/images/genie_civil.jpg',
     desc: "Machine polyvalente combinant chargeur frontal et benne rétro, parfaite pour les chantiers à contraintes d'espace.",
-    tags: ['Location', 'Vente'],
     models: '410, 430, 444 Series',
     available: true,
   },
@@ -171,15 +163,7 @@ export default function Equipment() {
                     : 'bg-red-500/20 text-red-400 border border-red-500/30'
                 }`}>
                   <span className={`w-1.5 h-1.5 rounded-full ${eq.available ? 'bg-emerald-400' : 'bg-red-400'}`}></span>
-                  {eq.available ? 'Disponible' : 'Sur commande'}
-                </div>
-                {/* Tags */}
-                <div className="absolute bottom-3 left-3 flex gap-1.5">
-                  {eq.tags.map((tag) => (
-                    <span key={tag} className="text-xs bg-navy-900/80 backdrop-blur text-gold-400 border border-gold-500/20 px-2 py-0.5 rounded-md flex items-center gap-1">
-                      <Tag size={10} /> {tag}
-                    </span>
-                  ))}
+                  {eq.available ? 'En service' : 'En chantier'}
                 </div>
               </div>
 
@@ -187,9 +171,6 @@ export default function Equipment() {
               <div className="p-5">
                 <div className="flex items-center justify-between mb-2">
                   <span className="text-xs text-gray-400 font-medium">{eq.category}</span>
-                  <span className="text-xs text-gray-300 flex items-center gap-1">
-                    <Clock size={10} /> Livraison rapide
-                  </span>
                 </div>
                 <h3 className="font-display font-bold text-navy-900 text-lg mb-2 group-hover:text-gold-600 transition-colors">
                   {eq.name}
