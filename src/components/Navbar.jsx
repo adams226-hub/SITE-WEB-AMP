@@ -46,7 +46,7 @@ export default function Navbar() {
       {/* Top bar */}
       <div className="hidden lg:flex bg-navy-900 text-sm text-white/60 py-2">
         <div className="max-w-7xl mx-auto px-6 w-full flex justify-between items-center">
-          <span className="text-gold-400 font-medium">African Mining Partner – Leader en équipements miniers en Afrique de l'Ouest</span>
+          <span className="text-gold-400 font-medium">African Mining Partner – BTP, Centrale à Béton & Carrières en Afrique de l'Ouest depuis 2014</span>
           <div className="flex items-center gap-6">
             <a href="tel:+22625414980" className="flex items-center gap-2 hover:text-gold-400 transition-colors">
               <Phone size={13} /> +226 25 41 49 80

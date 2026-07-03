@@ -49,7 +49,7 @@ export default function Footer() {
               </div>
             </div>
             <p className="text-white/40 text-sm leading-relaxed mb-6">
-              Leader en BTP, centrale à béton et exploitation de carrières en Afrique de l'Ouest depuis plus de 15 ans.
+              Leader en BTP, centrale à béton et exploitation de carrières en Afrique de l'Ouest depuis 2014.
             </p>
             {/* Social */}
             <div className="flex gap-3">

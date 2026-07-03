@@ -5,9 +5,9 @@ import { Trophy, Users, Truck, Globe, TrendingUp } from 'lucide-react'
 const stats = [
   {
     icon: Trophy,
-    value: 15, suffix: '+',
+    value: 12, suffix: '+',
     label: "Années d'expérience",
-    sub: 'Dans le secteur minier',
+    sub: 'En activité depuis 2014',
     gradient: 'from-gold-600/20 to-gold-500/5',
     border: 'border-gold-500/20',
     iconBg: 'bg-gold-500/15',
@@ -15,8 +15,8 @@ const stats = [
   },
   {
     icon: Truck,
-    value: 120, suffix: '+',
-    label: 'Machines en flotte',
+    value: 400, suffix: '+',
+    label: 'Équipements en flotte',
     sub: 'Entretenues & disponibles',
     gradient: 'from-blue-600/20 to-blue-500/5',
     border: 'border-blue-500/20',
@@ -25,7 +25,7 @@ const stats = [
   },
   {
     icon: Users,
-    value: 500, suffix: '+',
+    value: 400, suffix: '+',
     label: 'Employés',
     sub: 'Équipe qualifiée & experte',
     gradient: 'from-emerald-600/20 to-emerald-500/5',
@@ -84,7 +84,7 @@ export default function Stats() {
           </div>
           <div className="hidden md:flex items-center gap-2 glass rounded-xl px-4 py-2 text-sm text-white/40">
             <TrendingUp size={15} className="text-gold-400" />
-            Croissance continue depuis 2008
+            Croissance continue depuis 2014
           </div>
         </motion.div>
 
