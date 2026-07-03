@@ -42,7 +42,7 @@ const FloatingBadge = ({ children, className }) => (
   <motion.div
     animate={{ y: [0, -8, 0] }}
     transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
-    className={`glass rounded-xl p-4 shadow-2xl shadow-black/40 ${className}`}
+    className={`glass-dark rounded-xl p-4 shadow-2xl shadow-black/40 ${className}`}
   >
     {children}
   </motion.div>
@@ -221,7 +221,7 @@ export default function Hero() {
                 <motion.div
                   animate={{ y: [0, 10, 0] }}
                   transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut', delay: 1 }}
-                  className="glass rounded-xl p-4 shadow-2xl shadow-black/40 w-60"
+                  className="glass-dark rounded-xl p-4 shadow-2xl shadow-black/40 w-60"
                 >
                   <p className="text-white/40 text-xs mb-2">Disponibilité flotte</p>
                   <div className="flex gap-1.5 mb-2">
