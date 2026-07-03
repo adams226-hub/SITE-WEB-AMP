@@ -9,7 +9,7 @@ const slides = [
     title: 'Leader en Travaux',
     highlight: 'Routiers',
     sub: "en Afrique de l'Ouest",
-    desc: 'Pose d\'enrobé bitumineux, compactage et réhabilitation de routes nationales. AMP mobilise ses finisseurs BOMAG sur tous vos chantiers.',
+    desc: "Pose d'enrobé bitumineux, compactage et réhabilitation de routes nationales. AMP réalise vos chantiers avec ses propres équipes et son parc matériel.",
     cta: 'Voir nos projets',
     ctaHref: '#projets',
     accent: '#E8B422',
