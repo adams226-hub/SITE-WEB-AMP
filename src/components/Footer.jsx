@@ -152,12 +152,8 @@ export default function Footer() {
         {/* Bottom bar */}
         <div className="border-t border-white/5 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-white/25 text-xs">
-            © 2024 AMP – African Mining Partner. Tous droits réservés.
+            © 2026 AMP Holding. Tous droits réservés.
           </p>
-          <div className="flex items-center gap-6">
-            <a href="#" className="text-white/25 hover:text-white/50 text-xs transition-colors">Mentions légales</a>
-            <a href="#" className="text-white/25 hover:text-white/50 text-xs transition-colors">Politique de confidentialité</a>
-          </div>
         </div>
       </div>
 
