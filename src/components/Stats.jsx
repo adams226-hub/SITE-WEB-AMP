@@ -82,7 +82,7 @@ export default function Stats() {
               AMP en <span className="gold-gradient">chiffres</span>
             </h2>
           </div>
-          <div className="hidden md:flex items-center gap-2 glass rounded-xl px-4 py-2 text-sm text-white/40">
+          <div className="hidden md:flex items-center gap-2 glass-dark rounded-xl px-4 py-2 text-sm text-white/70">
             <TrendingUp size={15} className="text-gold-400" />
             Croissance continue depuis 2014
           </div>
@@ -111,7 +111,7 @@ export default function Stats() {
                   <Counter target={stat.value} suffix={stat.suffix} inView={inView} />
                 </p>
                 <p className="text-white font-semibold text-sm">{stat.label}</p>
-                <p className="text-white/35 text-xs mt-1">{stat.sub}</p>
+                <p className="text-white/65 text-xs mt-1">{stat.sub}</p>
               </motion.div>
             )
           })}
