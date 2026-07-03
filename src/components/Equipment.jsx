@@ -97,7 +97,7 @@ export default function Equipment() {
     : equipment.filter((e) => e.category === activeCategory)
 
   return (
-    <section id="equipements" className="py-24 bg-navy-950 relative overflow-hidden" ref={ref}>
+    <section id="equipements" className="py-24 bg-orange-50 relative overflow-hidden" ref={ref}>
       {/* Decoration */}
       <div className="absolute top-40 right-0 w-72 h-72 bg-gold-500/5 rounded-full blur-3xl pointer-events-none" />
 
@@ -111,7 +111,7 @@ export default function Equipment() {
         >
           <div>
             <p className="section-label mb-4">Notre flotte</p>
-            <h2 className="section-title">
+            <h2 className="section-title text-navy-900">
               Nos <span className="gold-gradient">Équipements</span>
             </h2>
           </div>
@@ -133,8 +133,8 @@ export default function Equipment() {
               onClick={() => setActiveCategory(cat)}
               className={`px-5 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
                 activeCategory === cat
-                  ? 'bg-gold-500 text-navy-900 shadow-lg shadow-gold-500/25'
-                  : 'glass text-white/60 hover:text-white hover:border-white/20'
+                  ? 'bg-gold-500 text-white shadow-lg shadow-gold-500/25'
+                  : 'bg-white border border-orange-100 text-gray-600 hover:text-gold-600 hover:border-orange-300'
               }`}
             >
               {cat}
@@ -150,7 +150,7 @@ export default function Equipment() {
               initial={{ opacity: 0, y: 30 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: i * 0.07 }}
-              className="group glass rounded-2xl overflow-hidden card-hover"
+              className="group bg-white border border-orange-100 rounded-2xl overflow-hidden card-hover shadow-sm hover:shadow-md hover:shadow-orange-100"
             >
               {/* Image */}
               <div className="relative h-44 bg-navy-800 overflow-hidden">
@@ -186,18 +186,18 @@ export default function Equipment() {
               {/* Content */}
               <div className="p-5">
                 <div className="flex items-center justify-between mb-2">
-                  <span className="text-xs text-white/40 font-medium">{eq.category}</span>
-                  <span className="text-xs text-white/30 flex items-center gap-1">
+                  <span className="text-xs text-gray-400 font-medium">{eq.category}</span>
+                  <span className="text-xs text-gray-300 flex items-center gap-1">
                     <Clock size={10} /> Livraison rapide
                   </span>
                 </div>
-                <h3 className="font-display font-bold text-white text-lg mb-2 group-hover:text-gold-400 transition-colors">
+                <h3 className="font-display font-bold text-navy-900 text-lg mb-2 group-hover:text-gold-600 transition-colors">
                   {eq.name}
                 </h3>
-                <p className="text-white/45 text-xs leading-relaxed mb-4 line-clamp-2">{eq.desc}</p>
+                <p className="text-gray-500 text-xs leading-relaxed mb-4 line-clamp-2">{eq.desc}</p>
                 <div className="flex items-center justify-between">
-                  <span className="text-xs text-gold-500/70 font-medium">Modèles: {eq.models}</span>
-                  <a href="#contact" className="text-gold-400 hover:text-gold-300 transition-colors">
+                  <span className="text-xs text-gold-600 font-medium">Modèles: {eq.models}</span>
+                  <a href="#contact" className="text-gold-500 hover:text-gold-600 transition-colors">
                     <ArrowRight size={18} />
                   </a>
                 </div>

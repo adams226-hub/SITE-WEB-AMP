@@ -4,8 +4,8 @@ import { X, MessageCircle } from 'lucide-react'
 
 export default function WhatsApp() {
   const [open, setOpen] = useState(false)
-  const phone = '22625000000'
-  const message = encodeURIComponent("Bonjour AMP, je souhaite avoir des informations sur vos équipements.")
+  const phone = '22625414980'
+  const message = encodeURIComponent("Bonjour AMP Holding 👋 Je souhaite avoir des informations sur vos services.")
 
   return (
     <div className="fixed bottom-24 right-6 z-50 flex flex-col items-end gap-3">

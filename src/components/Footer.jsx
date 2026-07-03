@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { Phone, Mail, MapPin, Facebook, Linkedin, Twitter, ArrowUp } from 'lucide-react'
 
@@ -16,6 +17,23 @@ const equipment = [
 ]
 
 export default function Footer() {
+  const [email, setEmail] = useState('')
+  const [subscribed, setSubscribed] = useState(false)
+
+  const handleNewsletter = (e) => {
+    e.preventDefault()
+    if (!email) return
+    const msg = encodeURIComponent(
+      `Bonjour AMP 👋\n\n` +
+      `*INSCRIPTION NEWSLETTER*\n\n` +
+      `📧 Email: ${email}\n\n` +
+      `Je souhaite recevoir vos actualités et informations sur les nouvelles machines.`
+    )
+    window.open(`https://wa.me/22625414980?text=${msg}`, '_blank')
+    setSubscribed(true)
+    setEmail('')
+  }
+
   return (
     <footer className="bg-navy-950 border-t border-white/5 relative">
       {/* Gold line top */}
@@ -25,17 +43,13 @@ export default function Footer() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
           {/* Brand */}
           <div className="lg:col-span-1">
-            <div className="flex items-center gap-3 mb-5">
-              <div className="w-10 h-10 bg-gradient-to-br from-gold-500 to-gold-700 rounded-lg flex items-center justify-center font-display font-black text-navy-900 text-xl shadow-lg shadow-gold-500/30">
-                A
-              </div>
-              <div className="flex flex-col leading-none">
-                <span className="font-display font-bold text-white text-lg">AMP</span>
-                <span className="text-gold-500 text-xs font-medium tracking-widest uppercase">Mining Partner</span>
+            <div className="mb-5">
+              <div className="bg-white rounded-xl p-2 inline-block">
+                <img src="/images/logo-amp.png" alt="AMP Holding" className="h-12 w-auto object-contain" />
               </div>
             </div>
             <p className="text-white/40 text-sm leading-relaxed mb-6">
-              Leader en location et vente d'équipements miniers et de génie civil en Afrique de l'Ouest depuis plus de 15 ans.
+              Leader en BTP, centrale à béton et exploitation de carrières en Afrique de l'Ouest depuis plus de 15 ans.
             </p>
             {/* Social */}
             <div className="flex gap-3">
@@ -97,27 +111,40 @@ export default function Footer() {
               </li>
               <li className="flex items-center gap-3">
                 <Phone size={15} className="text-gold-500 flex-shrink-0" />
-                <a href="tel:+22625000000" className="text-white/40 hover:text-gold-400 text-sm transition-colors">+226 25 00 00 00</a>
+                <a href="tel:+22625414980" className="text-white/40 hover:text-gold-400 text-sm transition-colors">+226 25 41 49 80</a>
               </li>
               <li className="flex items-center gap-3">
                 <Mail size={15} className="text-gold-500 flex-shrink-0" />
-                <a href="mailto:contact@amp-bf.com" className="text-white/40 hover:text-gold-400 text-sm transition-colors">contact@amp-bf.com</a>
+                <a href="mailto:r.bationo@amp-bf.com" className="text-white/40 hover:text-gold-400 text-sm transition-colors">r.bationo@amp-bf.com</a>
               </li>
             </ul>
 
             {/* Newsletter */}
             <div className="mt-6">
               <p className="text-white/40 text-xs mb-3">Restez informé de nos nouvelles machines</p>
-              <div className="flex gap-2">
-                <input
-                  type="email"
-                  placeholder="votre@email.com"
-                  className="flex-1 bg-white/5 border border-white/10 rounded-lg px-3 py-2 text-white text-xs placeholder-white/20 outline-none focus:border-gold-500/40 transition-colors"
-                />
-                <button className="bg-gold-500 hover:bg-gold-400 text-navy-900 rounded-lg px-3 py-2 text-xs font-semibold transition-colors">
-                  OK
-                </button>
-              </div>
+              {subscribed ? (
+                <p className="text-gold-400 text-xs font-semibold flex items-center gap-2">
+                  <span className="w-2 h-2 rounded-full bg-gold-400 animate-pulse"></span>
+                  Merci ! Vous serez informé sur WhatsApp.
+                </p>
+              ) : (
+                <form onSubmit={handleNewsletter} className="flex gap-2">
+                  <input
+                    type="email"
+                    required
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    placeholder="votre@email.com"
+                    className="flex-1 bg-white/5 border border-white/10 rounded-lg px-3 py-2 text-white text-xs placeholder-white/20 outline-none focus:border-gold-500/40 transition-colors"
+                  />
+                  <button
+                    type="submit"
+                    className="bg-gold-500 hover:bg-gold-400 text-white rounded-lg px-3 py-2 text-xs font-semibold transition-colors whitespace-nowrap"
+                  >
+                    S'inscrire
+                  </button>
+                </form>
+              )}
             </div>
           </div>
         </div>

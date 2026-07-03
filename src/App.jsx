@@ -25,7 +25,7 @@ export default function App() {
       </AnimatePresence>
 
       {!loading && (
-        <div className="min-h-screen bg-navy-950 overflow-x-hidden">
+        <div className="min-h-screen bg-white overflow-x-hidden">
           <ScrollProgress />
           <Navbar />
           <Hero />

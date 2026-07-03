@@ -185,7 +185,7 @@ export default function Projects() {
   const filtered = cat === 'Tous' ? projects : projects.filter(p => p.type === cat)
 
   return (
-    <section id="projets" className="py-24 bg-navy-950 overflow-hidden" ref={ref}>
+    <section id="projets" className="py-24 bg-white overflow-hidden" ref={ref}>
       <div className="max-w-7xl mx-auto px-6">
 
         {/* Header */}
@@ -198,7 +198,7 @@ export default function Projects() {
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-8">
             <div>
               <p className="section-label mb-4">Références & Réalisations</p>
-              <h2 className="section-title">
+              <h2 className="section-title text-navy-900">
                 Nos <span className="gold-gradient">Projets</span>
               </h2>
             </div>
@@ -209,9 +209,9 @@ export default function Projects() {
                 { v: '3', l: 'Carrières propres' },
                 { v: '2', l: 'Centrales à béton' },
               ].map(({ v, l }) => (
-                <div key={l} className="glass rounded-xl px-4 py-2 text-center">
+                <div key={l} className="bg-white border border-orange-100 rounded-xl px-4 py-2 text-center shadow-sm">
                   <p className="font-display font-black text-gold-400 text-xl leading-none">{v}</p>
-                  <p className="text-white/40 text-[11px] mt-0.5">{l}</p>
+                  <p className="text-gray-400 text-[11px] mt-0.5">{l}</p>
                 </div>
               ))}
             </div>
@@ -225,8 +225,8 @@ export default function Projects() {
                 onClick={() => setCat(c)}
                 className={`px-4 py-2 rounded-xl text-sm font-semibold transition-all duration-200 ${
                   cat === c
-                    ? 'bg-gold-500 text-navy-900'
-                    : 'glass text-white/50 hover:text-white hover:border-white/20'
+                    ? 'bg-gold-500 text-white shadow-md shadow-gold-500/20'
+                    : 'bg-white border border-orange-100 text-gray-500 hover:text-gold-600 hover:border-orange-200'
                 }`}
               >
                 {c}

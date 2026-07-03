@@ -1,60 +1,55 @@
-import { motion } from 'framer-motion'
-import { useInView } from 'framer-motion'
 import { useRef } from 'react'
-import { Truck, ShoppingCart, Wrench, Factory, ArrowRight, CheckCircle2 } from 'lucide-react'
+import { motion, useInView } from 'framer-motion'
+import { Factory, HardHat, Mountain, ArrowRight, CheckCircle2 } from 'lucide-react'
 
 const services = [
   {
-    icon: Truck,
-    title: 'Location de Machines',
-    desc: "Louez nos machines minières et de génie civil pour la durée de votre projet. Flotte entretenue, livraison sur site, assistance technique incluse.",
-    features: [
-      'Contrats à court et long terme',
-      'Livraison et récupération sur site',
-      'Maintenance préventive incluse',
-      'Opérateurs qualifiés disponibles',
-    ],
-    color: 'from-blue-600 to-blue-800',
-    badge: 'Flexible',
-  },
-  {
-    icon: ShoppingCart,
-    title: 'Vente de Machines',
-    desc: "Achetez vos équipements neufs ou reconditionnés. Nous sélectionnons les meilleures marques mondiales pour garantir performance et fiabilité.",
-    features: [
-      'Machines neuves et reconditionnées',
-      'Grandes marques mondiales',
-      'Garantie fabricant',
-      'Financement sur mesure',
-    ],
-    color: 'from-gold-600 to-gold-700',
-    badge: 'Populaire',
-  },
-  {
-    icon: Wrench,
-    title: 'Maintenance & SAV',
-    desc: "Notre équipe technique assure l'entretien, la réparation et la disponibilité maximale de vos machines pour éviter tout arrêt de production.",
-    features: [
-      "Contrats d'entretien préventif",
-      "Interventions d'urgence 24h/7j",
-      'Pièces de rechange en stock',
-      "Techniciens certifiés constructeurs",
-    ],
-    color: 'from-emerald-600 to-emerald-800',
-    badge: 'Réactif',
-  },
-  {
     icon: Factory,
     title: 'Centrale à Béton',
-    desc: "Production et livraison de béton prêt à l'emploi. Nos carrières Koro et Didri fournissent des agrégats de qualité pour tous vos chantiers.",
+    desc: "Production et vente de béton prêt à l'emploi. Nos centrales de Ouagadougou et Orodara alimentent vos chantiers avec un béton de qualité, fabriqué à partir des agrégats de nos propres carrières.",
     features: [
-      'Béton prêt à emploi sur commande',
-      'Carrières propres (Koro & Didri)',
-      'Livraison rapide sur chantier',
-      'Commandes via canal WhatsApp dédié',
+      'Béton prêt à l\'emploi sur commande',
+      'Livraison directe sur vos chantiers',
+      'Agrégats propres — carrières Koro & Didri',
+      'Commandes rapides via WhatsApp',
     ],
-    color: 'from-orange-600 to-orange-800',
-    badge: 'Exclusif',
+    color: 'from-gold-500 to-gold-700',
+    glow: 'shadow-gold-500/20',
+    border: 'hover:border-gold-300',
+    badge: 'Ouaga & Orodara',
+    badgeColor: 'bg-gold-50 text-gold-700 border-gold-200',
+  },
+  {
+    icon: HardHat,
+    title: 'BTP — Génie Civil',
+    desc: "Entrepreneur général, nous réalisons nous-mêmes vos projets de construction avec nos propres équipes qualifiées. Routes nationales, ponts, barrages et ouvrages d'art — nous prenons en charge vos chantiers de A à Z.",
+    features: [
+      'Construction de routes & voiries',
+      'Ponts, dalots & ouvrages d\'art',
+      'Barrages & aménagements hydrauliques',
+      'Terrassement & travaux de fondation',
+    ],
+    color: 'from-blue-500 to-blue-700',
+    glow: 'shadow-blue-500/20',
+    border: 'hover:border-blue-200',
+    badge: 'Entrepreneur général',
+    badgeColor: 'bg-blue-50 text-blue-700 border-blue-200',
+  },
+  {
+    icon: Mountain,
+    title: 'Mines & Carrières',
+    desc: "Exploitation de nos deux carrières Koro et Didri. Nous produisons et vendons de la pierre concassée et du gravier de qualité, disponibles pour vos projets BTP ou en vente directe à tous.",
+    features: [
+      'Pierre concassée tous calibres',
+      'Gravier & granulats de qualité',
+      'Vente directe — particuliers & entreprises',
+      'Utilisation interne pour nos projets',
+    ],
+    color: 'from-emerald-500 to-emerald-700',
+    glow: 'shadow-emerald-500/20',
+    border: 'hover:border-emerald-200',
+    badge: 'Carrières Koro & Didri',
+    badgeColor: 'bg-emerald-50 text-emerald-700 border-emerald-200',
   },
 ]
 
@@ -73,10 +68,9 @@ export default function Services() {
   const inView = useInView(ref, { once: true, margin: '-100px' })
 
   return (
-    <section id="services" className="py-24 bg-navy-900 relative overflow-hidden">
-      {/* Background decoration */}
-      <div className="absolute top-0 right-0 w-96 h-96 bg-gold-500/5 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-0 left-0 w-64 h-64 bg-blue-500/5 rounded-full blur-3xl pointer-events-none" />
+    <section id="services" className="py-24 bg-white relative overflow-hidden">
+      <div className="absolute top-0 right-0 w-96 h-96 bg-orange-100/60 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-64 h-64 bg-orange-50 rounded-full blur-3xl pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6" ref={ref}>
         {/* Header */}
@@ -86,12 +80,12 @@ export default function Services() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <p className="section-label mb-4">Ce que nous faisons</p>
-          <h2 className="section-title mb-6">
+          <p className="section-label mb-4 justify-center">Nos domaines d'activité</p>
+          <h2 className="section-title text-navy-900 mb-6">
             Nos <span className="gold-gradient">Services</span>
           </h2>
-          <p className="text-white/50 max-w-2xl mx-auto text-lg leading-relaxed">
-            AMP vous propose une gamme complète de services pour répondre à tous vos besoins en équipements miniers et de génie civil.
+          <p className="text-gray-500 max-w-2xl mx-auto text-lg leading-relaxed">
+            Du béton à la route, de la carrière au pont — AMP Holding maîtrise l'ensemble de la chaîne de construction en Afrique de l'Ouest.
           </p>
         </motion.div>
 
@@ -100,7 +94,7 @@ export default function Services() {
           variants={containerVariants}
           initial="hidden"
           animate={inView ? 'visible' : 'hidden'}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
+          className="grid grid-cols-1 md:grid-cols-3 gap-6"
         >
           {services.map((service) => {
             const Icon = service.icon
@@ -108,10 +102,10 @@ export default function Services() {
               <motion.div
                 key={service.title}
                 variants={cardVariants}
-                className="group relative glass rounded-2xl p-8 card-hover cursor-pointer"
+                className={`group relative bg-white border border-orange-100 rounded-2xl p-8 card-hover cursor-pointer shadow-sm hover:shadow-xl ${service.glow} ${service.border} transition-all duration-300`}
               >
                 {/* Badge */}
-                <span className="absolute top-6 right-6 text-xs font-semibold bg-gold-500/15 text-gold-400 border border-gold-500/30 px-3 py-1 rounded-full">
+                <span className={`inline-flex items-center text-xs font-semibold border px-3 py-1 rounded-full mb-6 ${service.badgeColor}`}>
                   {service.badge}
                 </span>
 
@@ -121,17 +115,17 @@ export default function Services() {
                 </div>
 
                 {/* Content */}
-                <h3 className="font-display text-xl font-bold text-white mb-3 group-hover:text-gold-400 transition-colors">
+                <h3 className="font-display text-xl font-bold text-navy-900 mb-3 group-hover:text-gold-600 transition-colors">
                   {service.title}
                 </h3>
-                <p className="text-white/50 text-sm leading-relaxed mb-6">
+                <p className="text-gray-500 text-sm leading-relaxed mb-6">
                   {service.desc}
                 </p>
 
                 {/* Features */}
                 <ul className="space-y-2 mb-8">
                   {service.features.map((f) => (
-                    <li key={f} className="flex items-start gap-2 text-sm text-white/60">
+                    <li key={f} className="flex items-start gap-2 text-sm text-gray-600">
                       <CheckCircle2 size={15} className="text-gold-500 mt-0.5 flex-shrink-0" />
                       {f}
                     </li>
@@ -139,15 +133,12 @@ export default function Services() {
                 </ul>
 
                 {/* Link */}
-                <a
-                  href="#contact"
-                  className="flex items-center gap-2 text-gold-400 text-sm font-semibold group-hover:gap-3 transition-all"
-                >
-                  En savoir plus <ArrowRight size={16} />
+                <a href="#contact" className="flex items-center gap-2 text-gold-600 text-sm font-semibold group-hover:gap-3 transition-all">
+                  Nous contacter <ArrowRight size={16} />
                 </a>
 
-                {/* Hover border glow */}
-                <div className="absolute inset-0 rounded-2xl border border-gold-500/0 group-hover:border-gold-500/30 transition-all duration-300 pointer-events-none" />
+                {/* Hover border */}
+                <div className="absolute inset-0 rounded-2xl border border-gold-400/0 group-hover:border-gold-400/30 transition-all duration-300 pointer-events-none" />
               </motion.div>
             )
           })}
