@@ -209,10 +209,10 @@ export default function Hero() {
                 <FloatingBadge className="w-52">
                   <div className="flex items-center gap-3">
                     <div className="w-10 h-10 rounded-lg bg-gold-500/20 flex items-center justify-center">
-                      <span className="text-gold-400 font-bold text-lg">120</span>
+                      <span className="text-gold-400 font-bold text-lg">400+</span>
                     </div>
                     <div>
-                      <p className="text-white text-sm font-semibold">Machines</p>
+                      <p className="text-white text-sm font-semibold">Équipements</p>
                       <p className="text-white/40 text-xs">En flotte active</p>
                     </div>
                   </div>
@@ -242,7 +242,7 @@ export default function Hero() {
 
                 <FloatingBadge className="w-44" style={{}}>
                   <div className="text-center">
-                    <p className="text-gold-400 font-display font-black text-2xl">15+</p>
+                    <p className="text-gold-400 font-display font-black text-2xl">12+</p>
                     <p className="text-white/50 text-xs">Années d'expertise</p>
                   </div>
                 </FloatingBadge>
