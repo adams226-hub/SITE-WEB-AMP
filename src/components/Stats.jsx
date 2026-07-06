@@ -1,6 +1,6 @@
 import { useRef, useEffect, useState } from 'react'
 import { motion, useInView } from 'framer-motion'
-import { Trophy, Users, Truck, Globe, TrendingUp } from 'lucide-react'
+import { Trophy, Users, Truck, Globe, TrendingUp, HardHat, Mountain, Factory } from 'lucide-react'
 
 const stats = [
   {
@@ -43,6 +43,12 @@ const stats = [
     iconBg: 'bg-purple-500/15',
     iconColor: 'text-purple-400',
   },
+]
+
+const opsStats = [
+  { icon: HardHat, value: 8, label: 'Projets actifs', sub: 'En cours de réalisation', color: 'text-gold-400', bg: 'bg-gold-500/10', border: 'border-gold-500/20' },
+  { icon: Mountain, value: 2, label: 'Carrières propres', sub: 'Koro & Didri', color: 'text-emerald-400', bg: 'bg-emerald-500/10', border: 'border-emerald-500/20' },
+  { icon: Factory, value: 1, label: 'Centrale à béton', sub: 'Ouaga & Orodara', color: 'text-blue-400', bg: 'bg-blue-500/10', border: 'border-blue-500/20' },
 ]
 
 function Counter({ target, suffix, inView }) {
@@ -88,7 +94,7 @@ export default function Stats() {
           </div>
         </motion.div>
 
-        {/* Cards */}
+        {/* Main stats */}
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
           {stats.map((stat, i) => {
             const Icon = stat.icon
@@ -112,6 +118,33 @@ export default function Stats() {
                 </p>
                 <p className="text-white font-semibold text-sm">{stat.label}</p>
                 <p className="text-white/65 text-xs mt-1">{stat.sub}</p>
+              </motion.div>
+            )
+          })}
+        </div>
+
+        {/* Operational stats row */}
+        <div className="grid grid-cols-3 gap-4 mt-4">
+          {opsStats.map((s, i) => {
+            const Icon = s.icon
+            return (
+              <motion.div
+                key={s.label}
+                initial={{ opacity: 0, y: 20 }}
+                animate={inView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.5, delay: 0.4 + i * 0.1 }}
+                className={`flex items-center gap-4 rounded-xl border ${s.border} ${s.bg} px-5 py-4`}
+              >
+                <div className={`w-9 h-9 rounded-lg ${s.bg} border ${s.border} flex items-center justify-center flex-shrink-0`}>
+                  <Icon size={18} className={s.color} />
+                </div>
+                <div>
+                  <p className={`font-display text-2xl font-black ${s.color}`}>
+                    <Counter target={s.value} suffix="" inView={inView} />
+                  </p>
+                  <p className="text-white text-xs font-semibold">{s.label}</p>
+                  <p className="text-white/50 text-xs">{s.sub}</p>
+                </div>
               </motion.div>
             )
           })}

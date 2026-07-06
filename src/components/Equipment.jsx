@@ -39,7 +39,7 @@ const equipment = [
     image: '/images/eq_compacteur.jpg',
     desc: "Compacteur à bille ou à pied de mouton pour le compactage de sol, routes et zones de remblai.",
     models: 'CA, CS, CP Series',
-    available: false,
+    available: true,
   },
   {
     id: 5,
