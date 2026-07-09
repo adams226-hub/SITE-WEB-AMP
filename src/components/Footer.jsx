@@ -57,7 +57,7 @@ export default function Footer() {
                 <a
                   key={i}
                   href="#"
-                  className="w-9 h-9 rounded-lg glass flex items-center justify-center text-white/40 hover:text-gold-400 hover:border-gold-500/30 transition-all"
+                  className="w-9 h-9 rounded-lg glass-dark flex items-center justify-center text-white/60 hover:text-gold-400 hover:border-gold-500/30 transition-all"
                 >
                   <Icon size={16} />
                 </a>
