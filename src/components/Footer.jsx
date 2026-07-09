@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
-import { Phone, Mail, MapPin, Facebook, Linkedin, Twitter, ArrowUp } from 'lucide-react'
+import { Phone, Mail, MapPin, Facebook, ArrowUp } from 'lucide-react'
 
 const quickLinks = [
   { label: 'Accueil', href: '#accueil' },
@@ -53,15 +53,14 @@ export default function Footer() {
             </p>
             {/* Social */}
             <div className="flex gap-3">
-              {[Facebook, Linkedin, Twitter].map((Icon, i) => (
-                <a
-                  key={i}
-                  href="#"
-                  className="w-9 h-9 rounded-lg glass-dark flex items-center justify-center text-white/60 hover:text-gold-400 hover:border-gold-500/30 transition-all"
-                >
-                  <Icon size={16} />
-                </a>
-              ))}
+              <a
+                href="https://www.facebook.com/ampburkina"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-9 h-9 rounded-lg glass-dark flex items-center justify-center text-white/60 hover:text-gold-400 transition-all"
+              >
+                <Facebook size={16} />
+              </a>
             </div>
           </div>
 
